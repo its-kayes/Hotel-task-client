@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='flex justify-around py-5 bg-slate-700'>
             <Link to='/' className='py-2 px-4 rounded-lg border border-yellow-200 text-white font-bold'>All Hotels</Link>
             {/* <button>  </button> */}
-            <Link to='/reviews' className='py-2 px-4 rounded-lg border border-yellow-200 text-white font-bold'>Reviews</Link>
+            <Link to='/review' className='py-2 px-4 rounded-lg border border-yellow-200 text-white font-bold'>Give Review</Link>
         </div>
     );
 };
