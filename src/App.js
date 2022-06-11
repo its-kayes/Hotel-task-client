@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import { Routes, Route, Link } from "react-router-dom";
+import Hotels from './components/Hotels';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar> </Navbar>
+      <Routes>
+        <Route path='/' element={<Hotels></Hotels>}> </Route>
+      </Routes>
+      {/* <h1 className='text-4xl text-center'> kaj kore sob </h1> */}
     </div>
   );
 }
