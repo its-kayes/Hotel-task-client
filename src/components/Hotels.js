@@ -9,7 +9,6 @@ const Hotels = () => {
 
     let { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('http://localhost:5000/hotels').then(res => res.json()));
 
-    // http://localhost:5000/hotels
     if (isLoading) {
         return <Loading> </Loading>
     }
@@ -32,7 +31,6 @@ const Hotels = () => {
                         <div class="card-body">
                             <h2 class="card-title text-sky-700 font-bold"> {hotel.name} </h2>
                             <p className='my-2 font-semibold'> {hotel.location} </p>
-                            {/* <p className='text-5xl text-red-500'> {hotel._id} </p> */}
                             <p> {hotel.about} </p>
                             <p className='text-red-600 font-semibold'> Per Day Cost: {hotel.cost} </p>
                             <div class="card-actions justify-between">
