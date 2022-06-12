@@ -15,10 +15,12 @@ const Review = () => {
 
     let reviewSubmit = (event) => {
         event.preventDefault();
+        let img = hotel.img;
         let name = hotel.name;
         let review = event.target.review.value;
         let data = {
             name,
+            img,
             review
         }
         console.log(data);
