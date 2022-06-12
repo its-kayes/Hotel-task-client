@@ -13,7 +13,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Hotels></Hotels>}> </Route>
         <Route path='/hotel/:id' element={<PerHotelDetails> </PerHotelDetails>}> </Route>
-        <Route path='/review' element={<Review> </Review>}> </Route>
+        <Route path='/review/:id' element={<Review> </Review>}> </Route>
+        {/* <Route path='/review' element={<Review> </Review>}> </Route> */}
       </Routes>
       {/* <h1 className='text-4xl text-center'> kaj kore sob </h1> */}
     </div>

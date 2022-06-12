@@ -18,6 +18,10 @@ const Hotels = () => {
         navigate(`/hotel/${id}`);
         console.log(id);
     }
+    let review = (id) => {
+        navigate(`/review/${id}`);
+        console.log(id);
+    }
 
     return (
         <div className='w-full flex justify-center'>
@@ -30,9 +34,10 @@ const Hotels = () => {
                             <p className='my-2 font-semibold'> {hotel.location} </p>
                             {/* <p className='text-5xl text-red-500'> {hotel._id} </p> */}
                             <p> {hotel.about} </p>
+                            <p className='text-red-600 font-semibold'> Per Day Cost: {hotel.cost} </p>
                             <div class="card-actions justify-between">
-                                <p className='text-red-600 font-semibold'> Per Day Cost: {hotel.cost} </p>
-                                <button onClick={()=> details(hotel._id)} class=" border-2 py-2 px-4 border-green-600 rounded-xl font-bold text-sky-700 "> Details </button>
+                                <button onClick={() => review(hotel._id)} class=" border-2 py-2 px-4 border-green-600 rounded-xl font-bold text-sky-700 "> Give Review </button>
+                                <button onClick={() => details(hotel._id)} class=" border-2 py-2 px-4 border-green-600 rounded-xl font-bold text-sky-700 "> Details </button>
                             </div>
                         </div>
                     </div>)
