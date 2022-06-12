@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Navbar from './components/Navbar';
 import { Routes, Route, Link } from "react-router-dom";
@@ -17,6 +18,7 @@ function App() {
         {/* <Route path='/review' element={<Review> </Review>}> </Route> */}
       </Routes>
       {/* <h1 className='text-4xl text-center'> kaj kore sob </h1> */}
+      <ToastContainer />
     </div>
   );
 }

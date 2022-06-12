@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
+import { toast } from 'react-toastify';
 const Review = () => {
 
     let { id } = useParams();
@@ -12,7 +13,7 @@ const Review = () => {
         return <Loading> </Loading>
     }
 
-    let reviewSubmit =  (event) => {
+    let reviewSubmit = (event) => {
         event.preventDefault();
         let name = hotel.name;
         let review = event.target.review.value;
@@ -21,6 +22,20 @@ const Review = () => {
             review
         }
         console.log(data);
+
+        fetch('http://localhost:5000/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success(' Your review are added  ')
+            })
+        event.target.reset();
     }
 
     return (
