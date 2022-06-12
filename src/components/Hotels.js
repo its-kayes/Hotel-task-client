@@ -7,7 +7,7 @@ const Hotels = () => {
 
     let navigate = useNavigate();
 
-    let { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('http://localhost:5000/hotels').then(res => res.json()));
+    let { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('https://quiet-hamlet-41570.herokuapp.com/hotels').then(res => res.json()));
 
     if (isLoading) {
         return <Loading> </Loading>

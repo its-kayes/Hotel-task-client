@@ -8,7 +8,7 @@ const PerHotelDetails = () => {
     let { id } = useParams();
     let navigate = useNavigate();
 
-    let { data: hotel, isLoading, refetch } = useQuery('hotel', () => fetch(`http://localhost:5000/hotel/${id}`).then(res => res.json()));
+    let { data: hotel, isLoading, refetch } = useQuery('hotel', () => fetch(`https://quiet-hamlet-41570.herokuapp.com/hotel/${id}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading> </Loading>
@@ -27,7 +27,7 @@ const PerHotelDetails = () => {
                     <p> {hotel.about} </p>
                     <p className='text-red-600 font-semibold'> Per Day Cost: {hotel.cost} </p>
                     <div class="card-actions justify-center my-3">
-                        <button onClick={()=> review(hotel._id)} class=" border-2 py-2 px-4 border-green-600 rounded-xl font-bold text-sky-700 "> Give Review </button>
+                        <button onClick={() => review(hotel._id)} class=" border-2 py-2 px-4 border-green-600 rounded-xl font-bold text-sky-700 "> Give Review </button>
                     </div>
                 </div>
             </div>

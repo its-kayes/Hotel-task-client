@@ -7,7 +7,7 @@ const Review = () => {
 
     let { id } = useParams();
 
-    let { data: hotel, isLoading, refetch } = useQuery('hotel', () => fetch(`http://localhost:5000/hotel/${id}`).then(res => res.json()));
+    let { data: hotel, isLoading, refetch } = useQuery('hotel', () => fetch(`https://quiet-hamlet-41570.herokuapp.com/hotel/${id}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading> </Loading>
@@ -25,7 +25,7 @@ const Review = () => {
         }
         console.log(data);
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://quiet-hamlet-41570.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
